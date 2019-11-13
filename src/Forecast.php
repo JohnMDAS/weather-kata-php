@@ -6,6 +6,12 @@ use GuzzleHttp\Client;
 
 class Forecast
 {
+    private $predictionsController;
+    
+    public function __construct()
+    {
+        $predictionsController = new PredictionsController(); 
+    }
     public function predict(City &$city, \DateTime $datetime = null, bool $wind = false): string
     {
         // When date is not provided we look for the current prediction
@@ -15,8 +21,9 @@ class Forecast
 
         // If there are predictions
         if ($datetime < new \DateTime("+6 days 00:00:00")) {
-            $city = new City();
-            $predictionsController = new PredictionsController(); 
+
+            
+
 
             foreach ($results as $result) {
 

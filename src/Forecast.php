@@ -4,10 +4,13 @@ namespace Codium\CleanCode;
 
 use GuzzleHttp\Client;
 
+define("DATE_RANGE", "+6 days 00:00:00");
+
 class Forecast
 {
     private $predictionsController;
-    
+
+
     public function __construct()
     {
         $predictionsController = new PredictionsController(); 
@@ -20,10 +23,7 @@ class Forecast
         }
 
         // If there are predictions
-        if ($datetime < new \DateTime("+6 days 00:00:00")) {
-
-            
-
+        if ($datetime < new \DateTime(DATE_RANGE)) {
 
             foreach ($results as $result) {
 

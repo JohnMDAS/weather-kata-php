@@ -2,7 +2,7 @@
 
 use GuzzleHttp\Client;
 
-class PredictionsController implements iPredictionsObtainer
+class MetaWeatherPredictionsObtainer implements iPredictionsObtainer
 {
   
     public function getPredictionsByCity(City &$city)
